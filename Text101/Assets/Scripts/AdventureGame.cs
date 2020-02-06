@@ -28,17 +28,13 @@ public class AdventureGame : MonoBehaviour
     {
         State[] nextStates = currentState.GetNextStates();
 
-        if (Input.GetKeyDown(KeyCode.Alpha1) || Input.GetKeyDown(KeyCode.Keypad1))
+        //for loop to avoid get "array out of range"-error
+        for (int index = 0; index < nextStates.Length; index++)
         {
-            currentState = nextStates[0];
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha2) || Input.GetKeyDown(KeyCode.Keypad2))
-        {
-            currentState = nextStates[1];
-        }
-        else if (Input.GetKeyDown(KeyCode.Alpha3) || Input.GetKeyDown(KeyCode.Keypad3))
-        {
-            currentState = nextStates[2];
+            if (Input.GetKeyDown(KeyCode.Alpha1 + index) || Input.GetKeyDown(KeyCode.Keypad1 + index))
+            {
+                currentState = nextStates[index];
+            }
         }
 
         textComponent.text = currentState.GetStateStory();
