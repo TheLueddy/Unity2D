@@ -8,15 +8,20 @@ public class Ball : MonoBehaviour
     [SerializeField] Paddle paddle;
     [SerializeField] float velX;
     [SerializeField] float velY;
+    [SerializeField] float randomFactor = 0.2f;
 
     //state
     Vector2 paddleToBallVector;
     bool hasStarted = false;
 
+    //Cached component references
+    Rigidbody2D myRigidBody2D;
+
     // Start is called before the first frame update
     void Start()
     {
         paddleToBallVector = transform.position - paddle.transform.position;
+        myRigidBody2D = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -38,16 +43,19 @@ public class Ball : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            GetComponent<Rigidbody2D>().velocity = new Vector2(velX, velY);
+            myRigidBody2D.velocity = new Vector2(velX, velY);
             hasStarted = true;
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Vector2 velocityTweak = new Vector2(Random.Range(-randomFactor, randomFactor), Random.Range(-randomFactor, randomFactor));
+
         if (hasStarted)
         {
             GetComponent<AudioSource>().PlayOneShot(GetComponent<AudioSource>().clip);
+            myRigidBody2D.velocity += velocityTweak;
         }
     }
 }
