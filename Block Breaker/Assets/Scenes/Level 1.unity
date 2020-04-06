@@ -398,16 +398,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 207773249976679572, guid: 11f61ffa930b37e428e120450c6831dd,
-        type: 3}
-      propertyPath: m_Pitch
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 207773250696632278, guid: 11f61ffa930b37e428e120450c6831dd,
-        type: 3}
-      propertyPath: randomFactor
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 207773250698830602, guid: 11f61ffa930b37e428e120450c6831dd,
         type: 3}
       propertyPath: m_Name

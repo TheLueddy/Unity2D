@@ -287,7 +287,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 0.01
   m_Material: {fileID: 6200000, guid: 926c2c777e97ce24baf3a0e86114872e, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -324,6 +324,7 @@ MonoBehaviour:
   paddle: {fileID: 207773250610924823}
   velX: 2
   velY: 15
+  randomFactor: 0.5
 --- !u!82 &207773249976679572
 AudioSource:
   m_ObjectHideFlags: 0
