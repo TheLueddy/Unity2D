@@ -744,6 +744,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Status
       objectReference: {fileID: 0}
+    - target: {fileID: 8289547012617910963, guid: d218a7fc6c8f8dd44be8f94cdc821e72,
+        type: 3}
+      propertyPath: isAutoPlayEnabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8289547013042614171, guid: d218a7fc6c8f8dd44be8f94cdc821e72,
         type: 3}
       propertyPath: m_LocalPosition.z
